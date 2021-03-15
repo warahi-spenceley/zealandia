@@ -15,6 +15,17 @@ function App (props) {
           <img src="/images/logo.png" alt="app-logo" className="logo"/>
         </div>
 
+        <div className="col pe-3 py-3 ps-3 ps-md-0">
+          <form className="bg-white shadow-sm rounded-3 px-3 pb-3 pt-2 text-midnight"> 
+          <input
+            type="text"
+            className="form-control"
+            name="search"
+            placeholder="search"
+          />  
+          </form>
+        </div>
+
         <div className="north-island img-fluid rounded float-end">
           <img src="/images/north_island.png" alt="north-island-link"/>
         </div>
