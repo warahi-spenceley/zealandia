@@ -11,7 +11,7 @@ function App (props) {
   return (
     <>
       <div className='app'>
-        <h1>Hello World!</h1>
+        <img src="/images/logo.png" alt="app-logo" className="logo" />
         <ul>
           {props.fruits.map(fruit => (
             <li key={fruit}>{fruit}</li>
