@@ -7,6 +7,7 @@ body {
 .logo {
   max-height: 6em;
   margin-top: 1em;
+  margin-right: 1em;
 }
 
 .north-island {
@@ -23,4 +24,8 @@ body {
     margin-right: 0em;
     align-items: center;
   }
+}
+
+.search-bar {
+  margin-top: 1em;
 }
