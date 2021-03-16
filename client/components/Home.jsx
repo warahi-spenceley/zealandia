@@ -32,10 +32,10 @@ function Home () {
               </p>
             </div>
             <div className="north-island col-sm-4">
-              <Link to="northisland"><img src="/images/homepage/north_island.png" alt="north-island-link"/></Link>
+              <Link to="/northisland"><img src="/images/homepage/north_island.png" alt="north-island-link"/></Link>
             </div>
             <div className="south-island float-end">
-              <Link to="southisland"><img src="/images/homepage/south_island.png" alt="south island link"/></Link>
+              <Link to="/southisland"><img src="/images/homepage/south_island.png" alt="south island link"/></Link>
             </div>
           </div>
         </div>
