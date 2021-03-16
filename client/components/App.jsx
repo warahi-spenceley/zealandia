@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { getWaimaramaData } from '../apis/hawkesBay'
+import { fetchWaimaramaData } from '../actions/hawkesBay'
 
-// import { fetchFruits } from '../actions'
-
-function App (props) {
-  // useEffect(() => {
-  //   props.dispatch(fetchFruits())
-  // }, [])
+function App ({ dispatch, hawkesBay }) {
+  useEffect(() => {
+    dispatch(fetchWaimaramaData())
+  }, [])
 
   return (
     <>
@@ -47,19 +45,22 @@ function App (props) {
             </div>
           </div>
         </div>
-
-        {/* <ul>
-          {props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
+        {console.log(hawkesBay)}
+        <ul>
+          {hawkesBay.map(day => (
+            <>
+              <li>{day.date}</li>
+              <li>{day.maxtempC} Degrees Celcius</li>
+            </>
           ))}
-        </ul> */}
+        </ul>
       </div>
     </>
   )
 }
 const mapStateToProps = (globalState) => {
   return {
-    // fruits: globalState.fruits
+    hawkesBay: globalState.hawkesBay
   }
 }
 
