@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom'
 function Home () {
   return (
     <>
-    <button>
-      <Link to="/northisland">northisland</Link>
-    </button>
       <div className='home'>
         <div className="container-fluid">
           <div className="row">
@@ -35,10 +32,10 @@ function Home () {
               </p>
             </div>
             <div className="north-island col-sm-4">
-              <img src="/images/homepage/north_island.png" alt="north-island-link"/>
+              <Link to="northisland"><img src="/images/homepage/north_island.png" alt="north-island-link"/></Link>
             </div>
             <div className="south-island float-end">
-              <img src="/images/homepage/south_island.png" alt="south island link"/>
+              <Link to="southisland"><img src="/images/homepage/south_island.png" alt="south island link"/></Link>
             </div>
           </div>
         </div>
