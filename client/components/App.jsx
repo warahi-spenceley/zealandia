@@ -17,9 +17,9 @@ function App ({ dispatch }) {
   return (
     <div className="app">
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route path="/northisland" component={NorthIslandList} />
         <Route path="/southisland" component={SouthIslandList} />
+        <Route path="/" component={Home} />
       </Switch>
     </div>
   )

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 function SouthIslandList () {
   return (
     <>
-      <p>dbfvdfbdfb dfb dfg bfdgb fg bf bfdg b fdgn dfg nbfd gbfd</p>
+      <p>dbfvdfbdfb dfb dfg bfdgb fg bf bfdg b fdgn dg nbfd gbfd</p>
     </>
   )
 }

@@ -1,9 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { Link } from 'react-router-dom'
+
 function Home () {
   return (
     <>
+    <button>
+      <Link to="/northisland">northisland</Link>
+    </button>
       <div className='home'>
         <div className="container-fluid">
           <div className="row">
