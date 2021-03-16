@@ -8,7 +8,7 @@ function NorthIslandList () {
     <>
       <h1>North Island</h1>
       <ul>
-        <Link to="/northisland/hawkesbay">Hawke's Bay</Link>
+        <Link to="/northisland/hawkesbay">Hawke&#39;s Bay</Link>
       </ul>
     </>
   )

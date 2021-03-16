@@ -1,24 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-function HawkesBay ({ hawkesBay }) {
+import { Link } from 'react-router-dom'
+
+function HawkesBay () {
   return (
     <>
-      <h1>Hawke's Bay</h1>
+      <h1>Hawke&#39;s Bay</h1>
       <ul>
-        <li>Waimarama Beach</li>
-        <li>Ocean Beach</li>
-        <li>Waipatiki Beach</li>
-        <li>Te Awanga Point</li>
+        <Link to="/northisland/hawkesbay/waimaramabeach">Waimarama Beach</Link>
       </ul>
     </>
   )
 }
 
-const mapStateToProps = (globalState) => {
-  return {
-    hawkesBay: globalState.hawkesBay
-  }
-}
-
-export default connect(mapStateToProps)(HawkesBay)
+export default connect()(HawkesBay)
