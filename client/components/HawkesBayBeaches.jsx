@@ -20,7 +20,6 @@ function HawkesBayBeaches ({ dispatch, forecast, waimarama, waipatiki }) {
       {waipatiki === true && (
         <h1>Waipatiki Beach</h1>
       )}
-
       <table>
         {forecast.map(day => (
           <>
@@ -105,8 +104,8 @@ function HawkesBayBeaches ({ dispatch, forecast, waimarama, waipatiki }) {
 function mapStateToProps (globalState) {
   return {
     forecast: globalState.hawkesBayForecast,
-    waimarama: globalState.waimarama,
-    waipatiki: globalState.waipatiki
+    waimarama: globalState.hawkesBayBeaches.waimarama,
+    waipatiki: globalState.hawkesBayBeaches.waipatiki
   }
 }
 
