@@ -10,6 +10,9 @@ function HawkesBay () {
       <ul>
         <Link to="/northisland/hawkesbay/waimaramabeach">Waimarama Beach</Link>
       </ul>
+      <ul>
+        <Link to="/northisland/hawkesbay/waimaramabeach">Waipatiki Beach</Link>
+      </ul>
     </>
   )
 }

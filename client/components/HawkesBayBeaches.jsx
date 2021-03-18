@@ -1,17 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchWaimaramaData } from '../actions/hawkesBay'
+import { fetchWaimaramaData, fetchWaipatikiData } from '../actions/hawkesBay'
 
-function WaimaramaBeach ({ dispatch, waimarama }) {
+function HawkesBayBeaches ({ dispatch, forecast }) {
+  const [beach, setBeach] = useState({
+    waimarama: true,
+    waipatiki: false
+  })
   useEffect(() => {
-    dispatch(fetchWaimaramaData())
+    if (beach.waimarama) {
+      dispatch(fetchWaimaramaData())
+    } else if (beach.waipatiki) {
+      dispatch(fetchWaipatikiData())
+    }
   }, [])
   return (
     <>
-      <h1>Waimarama Beach</h1>
+      {beach.waimarama === true && (
+        <h1>Waimarama Beach</h1>
+      )}
+
+      {beach.waipatiki === true && (
+        <h1>Waipatiki Beach</h1>
+      )}
+
       <table>
-        {waimarama.map(day => (
+        {forecast.map(day => (
           <>
             <tr>
               <th>{day.date}</th>
@@ -29,10 +44,10 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
                 </tr>
               </>
             ))}
-                  <tr>
-                    <th>Tides</th>
-                    <th></th>
-                  </tr>
+            <tr>
+              <th>Tides</th>
+              <th></th>
+            </tr>
             {day.tides.map(tides => (
               tides.tide_data.map(tidesData => (
                 <>
@@ -44,20 +59,20 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
               ))
             ))}
 
-                <tr>
-                  <th>Time</th>
-                  <th>Swell</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th>Wind</th>
-                  <th></th>
-                  <th></th>
+            <tr>
+              <th>Time</th>
+              <th>Swell</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Wind</th>
+              <th></th>
+              <th></th>
 
-                  <th>temp&#176;</th>
-                  <th>water&#176;</th>
+              <th>temp&#176;</th>
+              <th>water&#176;</th>
 
-                </tr>
+            </tr>
 
             {day.hourly.map(hour => (
               <>
@@ -68,7 +83,7 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
                   <td>{hour.swellDir16Point}</td>
                   <td>{hour.swellDir}&#176;</td>
                   <td>{hour.swellPeriod_secs}s</td>
-                  
+
                   <td>{hour.winddir16Point}</td>
                   <td>{hour.winddirDegree}&#176;</td>
                   <td>{hour.windspeedKmph}k/ph</td>
@@ -86,7 +101,6 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
             ))}
           </>
         ))}
-
       </table>
     </>
   )
@@ -94,8 +108,8 @@ function WaimaramaBeach ({ dispatch, waimarama }) {
 
 function mapStateToProps (globalState) {
   return {
-    waimarama: globalState.hawkesBay
+    forecast: globalState.hawkesBay
   }
 }
 
-export default connect(mapStateToProps)(WaimaramaBeach)
+export default connect(mapStateToProps)(HawkesBayBeaches)
