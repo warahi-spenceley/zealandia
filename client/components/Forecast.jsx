@@ -47,7 +47,7 @@ function Forecast ({
         <h1>Lyall Bay</h1>
       )}
 
-      <table className="table table-light ">
+      <table className="table table-info ">
         {forecast.map(day => (
           <React.Fragment key={day.date}>
             <thead>
@@ -128,6 +128,7 @@ function Forecast ({
                   </tr>
                 </tfoot>
               </React.Fragment>
+              
             ))}
           </React.Fragment>
         ))}
