@@ -34,11 +34,18 @@ h1 {
   margin-left: 1em;
 }
 
-/* @media all and (max-width: 996px) {
-  .col-sm-5, .about-nz {
-    visibility: hidden;
-  }
+/* .sun-table {
+
+}
+
+.tide-table {
+
 } */
+
+.hour-table {
+  padding-left: 10em;
+  padding-right: 10em;
+}
 
 
 
