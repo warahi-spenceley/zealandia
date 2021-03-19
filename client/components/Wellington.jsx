@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { Link } from 'react-router-dom'
 
-import { setLyallbay } from '../actions/wellingtonSpots'
+import { setLyallbay } from '../actions/wellingtonPlaces'
 
 function Wellington ({ dispatch }) {
   function handleLyallbayClick () {

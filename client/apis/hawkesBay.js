@@ -13,7 +13,7 @@ export function getWaimaramaData () {
     })
 }
 
-export function getOceanData () {
+export function getOceanbeachData () {
   const coors = '&q=-39.743167,177.0099003'
   return request.get(`${baseUrl}${key}${format}${coors}${tide}`)
     .then(res => {

@@ -1,4 +1,4 @@
-import { SET_WAIMARAMA_FORECAST, SET_WAIPATIKI_FORECAST } from '../actions/hawkesBayForecast'
+import { SET_WAIMARAMA_FORECAST, SET_WAIPATIKI_FORECAST, SET_OCEANBEACH_FORECAST, SET_TEAWANGA_FORECAST } from '../actions/hawkesBayForecast'
 
 import { SET_LYALLBAY_FORECAST } from '../actions/wellingtonForecast'
 
@@ -12,6 +12,13 @@ const reducer = (state = initialState, action) => {
 
     case SET_WAIPATIKI_FORECAST:
       return action.data
+
+    case SET_OCEANBEACH_FORECAST:
+      return action.data
+
+    case SET_TEAWANGA_FORECAST:
+      return action.data
+      
     // Wellington
     case SET_LYALLBAY_FORECAST:
       return action.data

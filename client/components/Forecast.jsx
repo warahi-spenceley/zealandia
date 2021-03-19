@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchWaimaramaForecast, fetchWaipatikiForecast } from '../actions/hawkesBayForecast'
+import { fetchWaimaramaForecast, fetchWaipatikiForecast, fetchOceanbeachForecast, fetchTeawangaForecast } from '../actions/hawkesBayForecast'
 
 import { fetchLyallbayForecast } from '../actions/wellingtonForecast'
 
 function Forecast ({
   dispatch, forecast,
   // Hawke's Bay
-  waimarama, waipatiki,
+  waimarama, waipatiki, oceanbeach, teawanga,
   // Wellington
   lyallbay
 }) {
@@ -19,6 +19,10 @@ function Forecast ({
       dispatch(fetchWaipatikiForecast())
     } else if (lyallbay) {
       dispatch(fetchLyallbayForecast())
+    } else if (oceanbeach) {
+      dispatch(fetchOceanbeachForecast())
+    } else if (teawanga) {
+      dispatch(fetchTeawangaForecast())
     }
   }, [])
   return (
@@ -26,11 +30,15 @@ function Forecast ({
       {waimarama === true && (
         <h1>Waimarama Beach</h1>
       )}
-
       {waipatiki === true && (
         <h1>Waipatiki Beach</h1>
       )}
-
+      {oceanbeach === true && (
+        <h1>Ocean Beach</h1>
+      )}
+      {teawanga === true && (
+        <h1>Te Awanga Point</h1>
+      )}
       {lyallbay === true && (
         <h1>Lyall Bay</h1>
       )}
@@ -121,6 +129,8 @@ function mapStateToProps (globalState) {
     forecast: globalState.forecast,
     waimarama: globalState.stateAvai.waimarama,
     waipatiki: globalState.stateAvai.waipatiki,
+    oceanbeach: globalState.stateAvai.oceanbeach,
+    teawanga: globalState.stateAvai.teawanga,
     lyallbay: globalState.stateAvai.lyallbay
   }
 }

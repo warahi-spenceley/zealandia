@@ -1,6 +1,6 @@
-import { SET_WAIMARAMA, SET_WAIPATIKI } from '../actions/hawkesBayBeaches'
+import { SET_WAIMARAMA, SET_WAIPATIKI, SET_OCEANBEACH, SET_TEAWANGA } from '../actions/hawkesbayPlaces'
 
-import { SET_LYALLBAY } from '../actions/wellingtonSpots'
+import { SET_LYALLBAY } from '../actions/wellingtonPlaces'
 
 const initialState = []
 
@@ -15,6 +15,15 @@ const reducer = (state = initialState, action) => {
       return {
         waipatiki: action.stateAvai
       }
+    case SET_OCEANBEACH:
+      return {
+        oceanbeach: action.stateAvai
+      }
+    case SET_TEAWANGA:
+      return {
+        teawanga: action.stateAvai
+      }
+      
     // Wellington
     case SET_LYALLBAY:
       return {
