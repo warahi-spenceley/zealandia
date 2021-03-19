@@ -42,12 +42,13 @@ h1 {
 
 } */
 
-.hour-table {
-  padding-left: 10em;
-  padding-right: 10em;
+/* .hour-table {
+
+} */
+
+.weather-icon {
+  padding: 0em!important;
 }
-
-
 
 
 
