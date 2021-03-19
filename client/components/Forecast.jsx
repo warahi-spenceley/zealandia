@@ -72,6 +72,7 @@ function Forecast ({
                   </div>
                 </React.Fragment>
               ))}
+
               <div className="col-sm-2">
                 <table className="tide-table table table-light table-hover table-borderless border border-3 table-sm">
                   <thead>
@@ -94,49 +95,50 @@ function Forecast ({
                   ))}
                 </table>
               </div>
+
               <div className="col-sm-8">
-              <table className="hour-table table table-light table-hover table-borderless border border-3 table-sm">
-                <thead>
-                  <tr className="table table-secondary">
-                    <th>Time</th>
-                    <th>Swell</th>
-                    <th>Dir</th>
-                    <th>Deg</th>
-                    <th>Period</th>
-                    <th>Wind</th>
-                    <th>Deg</th>
-                    <th>Speed</th>
-                    <th>temp&#176;</th>
-                    <th>water&#176;</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                {day.hourly.map(hour => (
-                  <React.Fragment key={hour.time}>
-                    <tbody>
-                      <tr>
-                        <td>{hour.time}</td>
-                        <td>{hour.swellHeight_ft}<small>ft</small></td>
-                        <td>{hour.swellDir16Point}</td>
-                        <td>{hour.swellDir}&#176;</td>
-                        <td>{hour.swellPeriod_secs}<small>secs</small></td>
-                        <td>{hour.winddir16Point}</td>
-                        <td>{hour.winddirDegree}&#176;</td>
-                        <td>{hour.windspeedKmph}<small>kph</small></td>
-                        <td>{hour.tempC}&#176;</td>
-                        <td>{hour.waterTemp_C}&#176;</td>
-                        {hour.weatherIconUrl.map(icon => (
-                          <React.Fragment key={icon.value}>
-                            <td>
-                              <img src={icon.value} className="weather-icon" alt="weather icon" width="30" height="30"></img>
-                            </td>
-                          </React.Fragment>
-                        ))}
-                      </tr>
-                    </tbody>
-                  </React.Fragment>
-                ))}
-              </table>
+                <table className="hour-table table table-light table-hover table-borderless border border-3 table-sm">
+                  <thead>
+                    <tr className="table table-secondary">
+                      <th>Time</th>
+                      <th>Swell</th>
+                      <th>Dir</th>
+                      <th>Deg</th>
+                      <th>Period</th>
+                      <th>Wind</th>
+                      <th>Deg</th>
+                      <th>Speed</th>
+                      <th>temp&#176;</th>
+                      <th>water&#176;</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  {day.hourly.map(hour => (
+                    <React.Fragment key={hour.time}>
+                      <tbody>
+                        <tr>
+                          <td>{hour.time}</td>
+                          <td>{hour.swellHeight_ft}<small>ft</small></td>
+                          <td>{hour.swellDir16Point}</td>
+                          <td>{hour.swellDir}&#176;</td>
+                          <td>{hour.swellPeriod_secs}<small>secs</small></td>
+                          <td>{hour.winddir16Point}</td>
+                          <td>{hour.winddirDegree}&#176;</td>
+                          <td>{hour.windspeedKmph}<small>kph</small></td>
+                          <td>{hour.tempC}&#176;</td>
+                          <td>{hour.waterTemp_C}&#176;</td>
+                          {hour.weatherIconUrl.map(icon => (
+                            <React.Fragment key={icon.value}>
+                              <td>
+                                <img src={icon.value} className="weather-icon" alt="weather icon" width="30" height="30"></img>
+                              </td>
+                            </React.Fragment>
+                          ))}
+                        </tr>
+                      </tbody>
+                    </React.Fragment>
+                  ))}
+                </table>
               </div>
             </React.Fragment>
           ))}
