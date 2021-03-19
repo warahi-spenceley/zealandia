@@ -20,7 +20,7 @@ function HawkesBay ({ dispatch }) {
         <Link onClick={handleWaimaramaClick} to="/northisland/hawkesbay/waimaramabeach">Waimarama Beach</Link>
       </ul>
       <ul>
-        <Link onClick={handleWaipatikiClick} to="/northisland/hawkesbay/waimaramabeach">Waipatiki Beach</Link>
+        <Link onClick={handleWaipatikiClick} to="/northisland/hawkesbay/waipatikibeach">Waipatiki Beach</Link>
       </ul>
     </>
   )

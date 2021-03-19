@@ -3,12 +3,16 @@ import { connect } from 'react-redux'
 
 import { fetchWaimaramaForecast, fetchWaipatikiForecast } from '../actions/hawkesBayForecast'
 
-function HawkesBayBeaches ({ dispatch, forecast, waimarama, waipatiki }) {
+import { fetchLyallbayForecast } from '../actions/wellingtonForecast'
+
+function Forecast ({ dispatch, forecast, waimarama, waipatiki, lyallbay }) {
   useEffect(() => {
     if (waimarama) {
       dispatch(fetchWaimaramaForecast())
     } else if (waipatiki) {
       dispatch(fetchWaipatikiForecast())
+    } else if (lyallbay) {
+      dispatch(fetchLyallbayForecast())
     }
   }, [])
   return (
@@ -105,8 +109,9 @@ function mapStateToProps (globalState) {
   return {
     forecast: globalState.hawkesBayForecast,
     waimarama: globalState.hawkesBayBeaches.waimarama,
-    waipatiki: globalState.hawkesBayBeaches.waipatiki
+    waipatiki: globalState.hawkesBayBeaches.waipatiki,
+    lyallbay: globalState.wellingtonSpots.lyallbay
   }
 }
 
-export default connect(mapStateToProps)(HawkesBayBeaches)
+export default connect(mapStateToProps)(Forecast)

@@ -10,6 +10,9 @@ function NorthIslandList () {
       <ul>
         <Link to="/northisland/hawkesbay">Hawke&#39;s Bay</Link>
       </ul>
+      <ul>
+        <Link to="/northisland/wellington">Wellington</Link>
+      </ul>
     </>
   )
 }
