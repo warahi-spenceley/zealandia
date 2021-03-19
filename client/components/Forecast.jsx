@@ -5,7 +5,7 @@ import { fetchWaimaramaForecast, fetchWaipatikiForecast } from '../actions/hawke
 
 import { fetchLyallbayForecast } from '../actions/wellingtonForecast'
 
-function Forecast ({ dispatch, forecast, waimarama, waipatiki, lyallbay }) {
+function Forecast ({ dispatch, forecast, wellyForecast, waimarama, waipatiki, lyallbay }) {
   useEffect(() => {
     if (waimarama) {
       dispatch(fetchWaimaramaForecast())
@@ -24,6 +24,11 @@ function Forecast ({ dispatch, forecast, waimarama, waipatiki, lyallbay }) {
       {waipatiki === true && (
         <h1>Waipatiki Beach</h1>
       )}
+
+      {lyallbay === true && (
+        <h1>Lyall Bay</h1>
+      )}
+
       <table>
         {forecast.map(day => (
           <>
@@ -108,6 +113,7 @@ function Forecast ({ dispatch, forecast, waimarama, waipatiki, lyallbay }) {
 function mapStateToProps (globalState) {
   return {
     forecast: globalState.hawkesBayForecast,
+    // wellyForecast: globalState.wellingtonForecast,
     waimarama: globalState.hawkesBayBeaches.waimarama,
     waipatiki: globalState.hawkesBayBeaches.waipatiki,
     lyallbay: globalState.wellingtonSpots.lyallbay
