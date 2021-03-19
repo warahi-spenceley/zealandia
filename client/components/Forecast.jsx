@@ -68,34 +68,28 @@ function Forecast ({
                           <td>{astro.sunset}</td>
                         </tr>
                       </tbody>
+                      <thead>
+                        <tr className="table table-info">
+                          <th>Tides</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      {day.tides.map(tides => (
+                        tides.tide_data.map(tidesData => (
+                          <React.Fragment key={tidesData.tideTime}>
+                            <tbody>
+                              <tr>
+                                <td>{tidesData.tide_type}</td>
+                                <td>{tidesData.tideTime}</td>
+                              </tr>
+                            </tbody>
+                          </React.Fragment>
+                        ))
+                      ))}
                     </table>
                   </div>
                 </React.Fragment>
               ))}
-
-              <div className="col-sm-2">
-                <table className="tide-table table table-light table-hover table-borderless border border-3 table-sm">
-                  <thead>
-                    <tr className="table table-info">
-                      <th>Tides</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  {day.tides.map(tides => (
-                    tides.tide_data.map(tidesData => (
-                      <React.Fragment key={tidesData.tideTime}>
-                        <tbody>
-                          <tr>
-                            <td>{tidesData.tide_type}</td>
-                            <td>{tidesData.tideTime}</td>
-                          </tr>
-                        </tbody>
-                      </React.Fragment>
-                    ))
-                  ))}
-                </table>
-              </div>
-
               <div className="col-sm-8">
                 <table className="hour-table table table-light table-hover table-borderless border border-3 table-sm">
                   <thead>
