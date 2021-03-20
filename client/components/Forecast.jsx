@@ -27,6 +27,7 @@ function Forecast ({
       dispatch(fetchLyallbayForecast())
     }
   }, [])
+
   function formatTimeShow (hour24) {
     if (hour24 === '0') return '0:00am'
     else if (hour24 === '300') return '3:00am'
@@ -37,6 +38,7 @@ function Forecast ({
     else if (hour24 === '1800') return '6:00am'
     else if (hour24 === '2100') return '9:00am'
   }
+
   return (
     <>
       {/* Hawke's Bay */}
@@ -118,14 +120,31 @@ function Forecast ({
                 <table className="hour-table table table-light table-hover table-borderless border border-3 table-sm">
                   <thead>
                     <tr className="table table-secondary">
+                      <th className="table-primary"></th>
+                      <th className="table-primary">Swell</th>
+                      <th className="table-primary"></th>
+                      <th className="table-primary"></th>
+                      <th className="table-primary"></th>
+                      <th className="table-success">Wind</th>
+                      <th className="table-success"></th>
+                      <th className="table-success"></th>
+                      <th className="table-success"></th>
+                      <th className="table-success"></th>
+                      <th className="table-success"></th>
+                      <th className="table-success"></th>
+                    </tr>
+                  </thead>
+                  <thead>
+                    <tr className="table table-secondary">
                       <th>Time</th>
-                      <th>Swell</th>
+                      <th>height</th>
                       <th>Dir</th>
                       <th>Deg</th>
                       <th>Period</th>
-                      <th>Wind</th>
+                      <th>Dir</th>
                       <th>Deg</th>
                       <th>Speed</th>
+                      <th>Gust</th>
                       <th>temp&#176;</th>
                       <th>water&#176;</th>
                       <th></th>
@@ -142,7 +161,8 @@ function Forecast ({
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
                           <td>{hour.winddir16Point}</td>
                           <td>{hour.winddirDegree}&#176;</td>
-                          <td>{hour.windspeedKmph}<small>kph</small></td>
+                          <td><small>{hour.windspeedKmph}k/ph</small></td>
+                          <td><small>{hour.WindGustKmph}k/ph</small></td>
                           <td>{hour.tempC}&#176;</td>
                           <td>{hour.waterTemp_C}&#176;</td>
                           {hour.weatherIconUrl.map(icon => (
