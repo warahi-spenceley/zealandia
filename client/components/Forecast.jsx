@@ -58,12 +58,28 @@ function Forecast ({
     } else return '/images/wind-and-swell/swell-mediocre.png'
   }
 
+  function hawkesbayWindQuality (winddeg) {
+    if (winddeg > 11 && winddeg < 169) {
+      return '/images/wind-and-swell/wind-good.png'
+    } else if (winddeg > 55 && winddeg < 124) {
+      return '/images/wind-and-swell/wind-bad.png'
+    } else return '/images/wind-and-swell/wind-mediocre.png'
+  }
+
   function wellingtonSwellQuality (swelldeg) {
     if (swelldeg > 122 && swelldeg < 191) {
       return '/images/wind-and-swell/swell-good.png'
     } else if (swelldeg > 77 && swelldeg < 169) {
       return '/images/wind-and-swell/swell-bad.png'
     } else return '/images/wind-and-swell/swell-mediocre.png'
+  }
+
+  function wellingtonWindQuality (winddeg) {
+    if (winddeg > 122 && winddeg < 191) {
+      return '/images/wind-and-swell/wind-bad.png'
+    } else if (winddeg > 77 && winddeg < 169) {
+      return '/images/wind-and-swell/wind-good.png'
+    } else return '/images/wind-and-swell/wind-mediocre.png'
   }
 
   return (
@@ -88,11 +104,9 @@ function Forecast ({
 
       <div className="container-fluid">
         <div className="row">
-
           {forecast.map(day => (
             <React.Fragment key={day.date}>
               <h4 className="hour-day-name">{new Date(day.date).toLocaleString('en-us', { weekday: 'long' })}</h4>
-
               {day.astronomy.map(astro => (
                 <React.Fragment key={astro.sunrise}>
                   <div className="col-sm-3">
@@ -148,12 +162,13 @@ function Forecast ({
                   <thead>
                     <tr className="table table-primary">
                       <th className="table-info">Time</th>
-                      <th></th>
                       <th>Swell</th>
                       <th></th>
                       <th></th>
                       <th></th>
+                      <th></th>
                       <th className="table-success">Wind</th>
+                      <th className="table-success"></th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
                       <th className="table-success"></th>
@@ -171,7 +186,8 @@ function Forecast ({
                       <th></th>
                       <th>period</th>
                       <th>dir</th>
-                      <th>deg</th>
+                      <th></th>
+                      <th></th>
                       <th>speed</th>
                       <th>gust</th>
                       <th>land&#176;</th>
@@ -185,18 +201,21 @@ function Forecast ({
                         <tr>
                           <td><small>{formatTimeShow(hour.time)}</small></td>
                           <td>{hour.swellHeight_ft}<small>ft</small></td>
-
                           {isHawkesbay() && (
                             <td><img src={hawkesbaySwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
                           )}
-
                           {isWellington() && (
                             <td><img src={wellingtonSwellQuality(hour.swellDir)} className="swell-quality-img"></img></td>
                           )}
-
                           <td><small>{hour.swellDir16Point}</small></td>
                           <td><small>{hour.swellDir}&#176;</small></td>
                           <td>{hour.swellPeriod_secs}<small>secs</small></td>
+                          {isHawkesbay() && (
+                            <td><img src={hawkesbayWindQuality(hour.winddirDegree)} className="wind-quality-img"></img></td>
+                          )}
+                          {isWellington() && (
+                            <td><img src={wellingtonWindQuality(hour.winddirDegree)} className="wind-quality-img"></img></td>
+                          )}             
                           <td><small>{hour.winddir16Point}</small></td>
                           <td><small>{hour.winddirDegree}&#176;</small></td>
                           <td><small>{hour.windspeedKmph}kph</small></td>

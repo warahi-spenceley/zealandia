@@ -49,10 +49,11 @@ h1 {
   width: 30px;
 }
 
-.swell-quality-img {
+.swell-quality-img, .wind-quality-img {
   height: 30px;
   width: 40px;
 }
+
 
 
 
