@@ -27,24 +27,76 @@ function NorthIslandList ({ dispatch }) {
   }
   return (
     <>
-      <h5>Hawke&#39;s Bay</h5>
-      <ul>
-        <Link onClick={handleWaimaramaClick} to="/northisland/hawkesbay/waimaramabeach">Waimarama Beach</Link>
-      </ul>
-      <ul>
-        <Link onClick={handleWaipatikiClick} to="/northisland/hawkesbay/waipatikibeach">Waipatiki Beach</Link>
-      </ul>
-      <ul>
-        <Link onClick={handleOceanbeachClick} to="/northisland/hawkesbay/oceanbeach">Ocean Beach</Link>
-      </ul>
-      <ul>
-        <Link onClick={handleTeawangaClick} to="/northisland/hawkesbay/teawanga">Te Awanga Point</Link>
-      </ul>
-
-      <h5>Wellington</h5>
-      <ul>
-        <Link onClick={handleLyallbayClick} to="/northisland/wellington/lyallbay">Lyall Bay</Link>
-      </ul>
+      <div className="northIslandList">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-3">
+              <div className="region-heading">
+                <h5>Northland</h5>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="region-heading">
+                <h5>Auckland</h5>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="region-heading">
+                <h5>Waikato</h5>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="region-heading">
+                <h5>Bay Of Plenty</h5>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-sm-3">
+                <div className="region-heading">
+                  <h5>Gisborne</h5>
+                </div>
+              </div>
+              <div className="col-sm-3">
+                <div className="region-heading">
+                  <h5>Hawke&#39;s Bay</h5>
+                </div>
+                <ul>
+                  <Link onClick={handleWaimaramaClick} to="/northisland/hawkesbay/waimaramabeach">Waimarama Beach</Link>
+                </ul>
+                <ul>
+                  <Link onClick={handleWaipatikiClick} to="/northisland/hawkesbay/waipatikibeach">Waipatiki Beach</Link>
+                </ul>
+                <ul>
+                  <Link onClick={handleOceanbeachClick} to="/northisland/hawkesbay/oceanbeach">Ocean Beach</Link>
+                </ul>
+                <ul>
+                  <Link onClick={handleTeawangaClick} to="/northisland/hawkesbay/teawanga">Te Awanga Point</Link>
+                </ul>
+              </div>
+              <div className="col-sm-3">
+                <div className="region-heading">
+                  <h5>Wellington</h5>
+                </div>
+                <ul>
+                  <Link onClick={handleLyallbayClick} to="/northisland/wellington/lyallbay">Lyall Bay</Link>
+                </ul>
+              </div>
+              <div className="col-sm-3">
+                <div className="region-heading">
+                  <h5>Wanganui</h5>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-sm-3">
+                  <div className="region-heading">
+                    <h5>Taranaki</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

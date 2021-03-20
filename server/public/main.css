@@ -55,7 +55,7 @@ h1 {
   width: 40px;
 }
 
-
-
-
-
+.region-heading {
+  padding-top: 1em;
+  padding-left: 2em;
+}

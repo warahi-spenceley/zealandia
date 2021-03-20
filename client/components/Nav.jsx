@@ -11,9 +11,7 @@ function Nav () {
             <div className="col-sm-1">
               <Link to ="/"><img src="/images/logo.png" alt="app-logo" className="logo"/></Link>
             </div>
-            <div className="col-sm-1">
-            </div>
-            <div className="col-sm-8 search-bar pe-3 py-3 ps-3 ps-md-0">
+            <div className="col-sm-11 search-bar pe-3 py-3 ps-3 ps-md-0">
               <form className="bg-white shadow-sm rounded-3 px-3 pb-3 pt-2 text-midnight">
                 <input
                   type="text"
