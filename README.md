@@ -6,7 +6,7 @@ npm run dev
 **World Weather Online API free trial ends MAY 15, 2021**
 
 
-Zealandia is a front end surf forecast application displaying data specific to the regions of New Zealand, Each region displays muiltiple surf spots. 
+Zealandia is a 7-day surf forecast application displaying data specific to the regions of New Zealand, Each region displays muiltiple surf spots. 
 
 This app uses multiple latitude & longitude GET requests to recieve data from a marine weather API.
 
